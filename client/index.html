@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giga Exchange</title>
+    <link rel="stylesheet" href="/client/css/styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark">G</span>
+          <span>Giga Exchange</span>
+        </div>
+        <nav>
+          <button id="nav-login" class="nav-btn active">Login</button>
+          <button id="nav-register" class="nav-btn">Register</button>
+          <button id="nav-dashboard" class="nav-btn hidden">Dashboard</button>
+          <button id="admin-button" class="nav-btn">Admin</button>
+          <button id="logout-btn" class="nav-btn danger hidden">Logout</button>
+        </nav>
+      </header>
+
+      <main>
+        <section id="login-view" class="view active">
+          <div class="card form-card">
+            <h1>Welcome back</h1>
+            <form id="login-form">
+              <label>Phone number
+                <input name="phone_number" type="tel" placeholder="+15550000001" required />
+              </label>
+              <label>Password
+                <input name="password" type="password" placeholder="Password" required />
+              </label>
+              <button type="submit">Login</button>
+            </form>
+            <p class="switch-copy">Need an account? <a href="#" id="show-register">Register</a></p>
+            <p class="demo-copy">Demo user: demo / Password123!</p>
+          </div>
+        </section>
+
+        <section id="register-view" class="view">
+          <div class="card form-card">
+            <h1>Create account</h1>
+            <form id="register-form">
+              <label>Phone number
+                <input name="phone_number" type="tel" placeholder="+15550000001" required />
+              </label>
+              <label>Username
+                <input name="username" type="text" placeholder="jane_doe" required />
+              </label>
+              <label>Password
+                <input name="password" type="password" placeholder="At least 8 characters" required />
+              </label>
+              <label>Confirm password
+                <input name="confirm_password" type="password" placeholder="Repeat password" required />
+              </label>
+              <button type="submit">Create account</button>
+            </form>
+            <p class="switch-copy">Already have an account? <a href="#" id="show-login">Login</a></p>
+          </div>
+        </section>
+
+        <section id="dashboard-view" class="view">
+          <div class="balance-card card">
+            <div class="balance-header">
+              <span id="welcome-name">Hello</span>
+              <button id="profile-button" class="ghost-btn">Profile</button>
+            </div>
+            <div id="balance-value" class="balance-value">0.00 GEX</div>
+            <div class="balance-actions">
+              <button id="send-button">Send Money</button>
+              <button id="receive-button" class="secondary">Receive</button>
+              <button id="scan-button" class="secondary">Scan QR</button>
+              <button id="my-qr-button" class="secondary">My QR</button>
+            </div>
+          </div>
+
+          <div class="card compact-card">
+            <h2>Recent transactions</h2>
+            <div id="transaction-list" class="transaction-list"></div>
+          </div>
+        </section>
+
+        <section id="profile-view" class="view">
+          <div class="card form-card">
+            <h1>Profile</h1>
+            <div id="profile-details" class="profile-details"></div>
+            <form id="password-form" class="stacked-form">
+              <label>Current password
+                <input name="current_password" type="password" placeholder="Current password" required />
+              </label>
+              <label>New password
+                <input name="new_password" type="password" placeholder="New password" required />
+              </label>
+              <button type="submit">Change password</button>
+            </form>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div id="modal" class="modal hidden" aria-live="polite">
+      <div class="modal-card">
+        <button id="close-modal" class="close-btn">×</button>
+        <div id="modal-content"></div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js"></script>
+    <script src="/client/js/app.js"></script>
+  </body>
+</html>

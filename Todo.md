@@ -1,7 +1,0 @@
-Server:
-    
-
-App:
-
-
-Desktop:
